@@ -17,3 +17,12 @@ class Solution:
         return "[.]".join(address.split("."))
 
 # Faster than above solution but consumes extra space
+
+
+# UPDATE 12/22
+
+# Slower than above solution and consumes extra space
+
+# Replace is faster than join and split
+
+# https://stackoverflow.com/questions/50463850/split-and-join-function-or-the-replace-function

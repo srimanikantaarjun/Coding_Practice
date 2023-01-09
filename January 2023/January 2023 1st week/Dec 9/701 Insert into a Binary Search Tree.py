@@ -17,19 +17,19 @@ You can return any of them.
 class Solution:
     def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         new = TreeNode(val)
-        if root is None:
-            return new
+        if root is None:        # if root is empty
+            return new          # we return the node with the value
         prev = None
         curr = root
         while curr is not None:
             if val == curr.val:
                 return root
-            elif val < curr.val:
+            elif val < curr.val:    # if value is less than root
                 prev = curr
-                curr = curr.left
+                curr = curr.left    # we traverse the left subtree
             else:
                 prev = curr
-                curr = curr.right
+                curr = curr.right   # else we traverse the right subtree
         if val < prev.val:
             prev.left = new
         else:

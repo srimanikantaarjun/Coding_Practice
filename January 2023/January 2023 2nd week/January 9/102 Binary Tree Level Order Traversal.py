@@ -9,6 +9,28 @@ Given the root of a binary tree, return the level order traversal of its nodes' 
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        res = []
+        if root is None:
+            return res
+        dq = deque()
+        dq.append(root)
+        while dq:
+            size = len(dq)
+            temp = []
+            for i in range(size):
+                node = dq.popleft()
+                temp.append(node.val)
+                if node.left is not None:
+                    dq.append(node.left)
+                if node.right is not None:
+                    dq.append(node.right)
+            res.append(temp)
+        return res
+
+"""
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if root is None:
@@ -29,3 +51,4 @@ class Solution:
             q = temp
             res.append(nodes)
         return res
+"""
